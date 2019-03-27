@@ -4,7 +4,10 @@
 <head>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Train Scheduler</title>
 </head>
 
@@ -12,43 +15,43 @@
     <div id="main-container">
         <header>
             <h1>Anytime is Train Time</h1>
-            <h3>Beep Beep. Toot Toot.</h3>
+            <h3><i class="fas fa-train"></i>Beep Beep. Toot Toot.<i class="fas fa-train"></i></h3>
         </header>
 
         <div id="schedule-container">
             <h4>Current Train Schedule</h6>
-            <div id="schedule-display">
-                <table id="table">
-                    <tr>
-                        <th>Train Name</th>
-                        <th>Destination</th>
-                        <th>Frequency (min)</th>
-                        <th>Next Arrival</th>
-                        <th>Minutes Away</th>
-                    </tr>
-                </table>
-            </div>
+                <div id="schedule-display">
+                    <table id="table">
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </table>
+                </div>
         </div>
 
         <div id="add-container">
             <h4>Add Train</h6>
-            <div id="add-display">
-               <form>
-                <h6>Train Name</h6>
-                <input type="text" name="train-name">
-                <br>
-                <h6>Destination</h6>
-                <input type="text" name="destination">
-                <br>
-                <h6>First Train Time (HH:MM - military time)</h6>
-                <input type="text" name="train-time">
-                <br>
-                <h6>Frequency (min)</h6>
-                <input type="text" name="frequency">
-                <br>
-                <button type="button">Submit</button> 
-               </form>
-            </div>
+                <div id="add-display">
+                    <form>
+                        <h6>Train Name</h6>
+                        <input id="train-name" type="text" name="train-name">
+                        <br>
+                        <h6>Destination</h6>
+                        <input id="destination" type="text" name="destination">
+                        <br>
+                        <h6>First Train Time (HH:MM - military time)</h6>
+                        <input id="train-time" type="text" name="train-time">
+                        <br>
+                        <h6>Frequency (min)</h6>
+                        <input id="frequency" type="text" name="frequency">
+                        <br>
+                        <button type="button">Submit</button>
+                    </form>
+                </div>
         </div>
     </div>
     <script src="assets/javascript/app.js"></script>
