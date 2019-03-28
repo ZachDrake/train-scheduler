@@ -1,4 +1,3 @@
-// Initialize Firebase
 var config = {
     apiKey: "AIzaSyD51f3xMJAhrAzISTXXKhT1ZpeYCUteiiQ",
     authDomain: "train-time-6117c.firebaseapp.com",
@@ -8,25 +7,24 @@ var config = {
     messagingSenderId: "916025088668"
 };
 firebase.initializeApp(config);
-
 var database = firebase.database();
 
 database.ref().on("child_added", function (childSnapshot) {
     var children = [
-        name = childSnapshot.val().trainName,
-        destination = childSnapshot.val().destination,
-        frequency = childSnapshot.val().frequency,
-        arrival = childSnapshot.val().nextArrival,
-        mins = childSnapshot.val().minsAway
+        childSnapshot.val().minsAway,
+        childSnapshot.val().nextArrival,
+        childSnapshot.val().frequency,
+        childSnapshot.val().destination,
+        childSnapshot.val().trainName
     ]
 
     var newRow = $('<tr>');
-    newRow.attr('class', "table-row");
     $('#table').append(newRow);
+
     for (var i = 0; i < children.length; i++) {
         var newCol = $('<td>');
         newCol.text(children[i]);
-        $('.table-row').append(newCol);
+        newRow.prepend(newCol);
     }
 
 });
@@ -50,15 +48,6 @@ $('button').on('click', function (event) {
         minsAway
     ]
 
-    // var newRow = $('<tr>');
-    // newRow.attr('class', "table-row");
-    // $('#table').append(newRow);
-    // for (var i = 0; i < colList.length; i++) {
-    //     var newCol = $('<td>');
-    //     newCol.text(colList[i]);
-    //     $('.table-row').append(newCol);
-    // }
-
     database.ref().push({
         trainName: trainName,
         destination: destination,
@@ -67,5 +56,6 @@ $('button').on('click', function (event) {
         minsAway: minsAway
 
     })
+
     $('form :input').val('');
 });

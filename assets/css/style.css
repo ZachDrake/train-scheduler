@@ -40,13 +40,13 @@ h6{
 }
 table {
     width: 100%;
-    border-bottom: 1px solid navy;   
 }
 tr:hover {
     background-color: lightgray;;
 }
 tr {
     text-align: center;
+    border-bottom: 1px solid navy;
 }
 #add-container {
     width: 75%;
