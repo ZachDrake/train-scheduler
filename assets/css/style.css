@@ -45,6 +45,9 @@ table {
 tr:hover {
     background-color: lightgray;;
 }
+tr {
+    text-align: center;
+}
 #add-container {
     width: 75%;
     margin: auto;
